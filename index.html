@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-        <script src="https://unpkg.com/chs-js-lib@latest/dist/chs.iife.js" type = "text/javascript"></script>
-
+        <!-- Hi, Kaylene! These are comments that won't appear in the HTML, but I'll use them to describe my changes. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> <!-- Adds the jQuery library -->
+        <script type="text/javascript" src="https://static.codehs.com/gulp/80550f5fc4071985bfef352d04f005ca3de931d3/chs-js-lib/chs.js"></script> <!-- This adds the CodeHS library -->
         <title>
             Kaylene's Webpage
         </title>
@@ -160,9 +160,12 @@ function background(){
     add(rect);
 }
 
-
-
-main();
+    // Once you're in Javascript (script tags), comments use double // instead of the HTML-style of comment, <!-- -->
+    window.onload = function() {
+        // The reason we need this, is because we only want to call your code when then window is READY.
+        // If we try to call "main()" outside of `window.onload = function() {}`.... then it runs before the code has finished downloading
+        main();
+    }
         
         </script>
     </body>
