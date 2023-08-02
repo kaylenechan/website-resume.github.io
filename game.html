@@ -9,37 +9,23 @@
         </title>
         
         <style>
-            h1 {
-                color: rgb(173, 37, 37); 
-            }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+
+        canvas{
+            margin-top: 100px;
+        }
             
-            .code {
-                font-family: Courier;
-            }
-            
-            #logo {
-                color: rgb(84, 239, 105);
-                font-size: 40px;
-                font-family: Georgia;
-                font-style: italic;
-            }
-            
-            #description {
-                color: black;
-            }
         </style>
     </head>
     
     <body>
-        <canvas width="400" height="480"></canvas>
+        <div>
+            <canvas width="400" height="480"></canvas>
+        </div>
 
-        <h1 id="logo">
-            Welcome to my webpage!
-        </h1>
-        
-        <p id="description" class="code">
-            blahblahblah
-        </p>
         <script type = "text/javascript"> 
         let subject;
 let dx = 5;

@@ -1,82 +1,84 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-    <head> 
-        <style>
-            #title{
-                font-family: Courier;  
-                margin-top: 50px;
-                margin-bottom: 100px;
-                font-size: 50px;
-            }
 
-            div{
-                display: flex;
-                justify-content:center;
-            }
+<head>
+    <style>
+        #pic{
+            display: flex;
+            justify-content: center;
+        }
 
-            #topics{
-                display: flex;
-                flex-wrap: wrap; 
-                justify-content:space-evenly;
-                column-gap: 200px;
-                margin-left: 100px;
-                margin-right: 100px
-            }
+        #sticker-one{
+            position: absolute;
+            top: 150px;
+            left: 1400px;
+        }
 
-            .box{
-                background-color: rgb(186, 224, 228);
-                height: 450px;
-                width: 500px; 
-                margin-bottom: 100px; 
-                flex-direction: column;
-                align-items: center;
-            }
+        #sticker-two{
+            position: absolute;
+            top: 50px;
+            left: 1300px;            
 
-            #skills{
-                width: 445px;
-                height: 300px;
-                margin-top: 30px;
-            }
+        }
 
-            #tag{
-                font-family: Courier;
-                text-align: center;
-                margin-top: 50px;
-                font-size: 20px;
-            }
+        #sticker-three{
+            position: absolute;
+            margin-left: 100px;
+            top: 600px;
+            left: 0;
+        }
 
-        </style>
-    </head>
+        #sticker-whale{
+            position:absolute;
+            top:500px;
+            left:200px;
+        }
 
-    <body>
-        <div>
-            <h1 id = "title">About Me</h1>
+        #sticker-whale-two{
+            position: absolute;
+            top: 300px;
+            left: 1400px;
+        }
+        #me{
+            margin-top: 50px;
+        }
+
+        #title{
+            height: 900px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="pic">
+        
+       <div id = "idk">
+            <div id="me">
+                <img id="title" src="Screenshot 2023-08-01 231846.png" alt = "Kaylene Chan">
+            </div>
+        </div> 
+        <div id="flower">
+            <img id="sticker-one" src="Screenshot_2023-08-01_202702-removebg-preview.png" alt="flower sticker">
         </div>
 
-        <div id = "topics">
-
-            <div class="box">
-                <img id="skills" src="https://img.freepik.com/free-photo/paper-background_53876-147734.jpg?w=2000" alt="Rep image">
-                <h5 id = "tag"> Skills</h5>
-            </div>
-
-            <div class="box"> 
-                <img id="skills" src="https://img.freepik.com/free-photo/paper-background_53876-147734.jpg?w=2000" alt="Rep image">
-                <h5 id = "tag"> Education </h5>
-            </div>
-
-            <div class = "box"> 
-                <img id="skills" src="https://img.freepik.com/free-photo/paper-background_53876-147734.jpg?w=2000" alt="Rep image">
-                <h5 id = "tag"> Community</h5>
-            </div>
-
-            <div class = "box"> 
-                <img id="skills" src="https://img.freepik.com/free-photo/paper-background_53876-147734.jpg?w=2000" alt="Rep image">
-                <h5 id = "tag"> Hobbies</h5>
-            </div>
-
+        <div id="flower-two">
+            <img id="sticker-two" src="Screenshot_2023-08-01_202702-removebg-preview.png" alt="flower sticker">
         </div>
 
-    </body>
+        <div id="flower-three">
+            <img id="sticker-three" src="Screenshot_2023-08-01_202702-removebg-preview.png" alt="flower sticker">
+        </div>
+
+        <div id="whale">
+            <img id="sticker-whale" src="c62df4ac3c563e6d3bfe98e36d7a861b-removebg-preview.png" alt="whale-sticker">
+        </div>
+
+        <div id="whale">
+            <img id="sticker-whale-two" src="c62df4ac3c563e6d3bfe98e36d7a861c-removebg-preview.png" alt="whale-sticker">
+        </div>
+
+    </div>
+</body>
 
 </html>
