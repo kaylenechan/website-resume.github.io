@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Hi, Kaylene! These are comments that won't appear in the HTML, but I'll use them to describe my changes. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> <!-- Adds the jQuery library -->
+        <script type="text/javascript" src="https://static.codehs.com/gulp/80550f5fc4071985bfef352d04f005ca3de931d3/chs-js-lib/chs.js"></script> <!-- This adds the CodeHS library -->
+        <title>
+            Kaylene's Webpage
+        </title>
+        
+        <style>
+        div{
+            display: flex;
+            justify-content: center;
+        }
+
+        canvas{
+            margin-top: 100px;
+        }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div>
+            <canvas width="400" height="480"></canvas>
+        </div>
+
+        <script type = "text/javascript"> 
+        let subject;
+let dx = 5;
+let dy = 0;
+let hx = 3;
+let hy = 5;
+let point;
+let hay_width = 30;
+let top_left;
+let top_right;
+let bottom_right;
+let bottom_left;
+let top_middle;
+let right_middle;
+let bottom_middle;
+let left_middle;
+let middle;
+let count = 0;
+let txt;
+
+function main(){
+    start();
+    mouseClickMethod(game);
+}
+
+function start(){
+    let copter = new WebImage("https://codehs.com/uploads/16356fa7b087bfe12ec9868ef3c74428");
+    copter.setSize(getWidth(), getHeight()); 
+    copter.setPosition(0, 0); 
+    add(copter); 
+}
+
+function game(){
+    background();
+    chicken();
+    setTimer(move, 40);
+    keyDownMethod(direction);
+    hay();
+    score();
+}
+
+function move(){
+    subject.move(dx,dy);
+    point.move(hx,hy);
+    checkCollisions();
+}
+
+function score(){
+    txt = new Text("Score: " + count );
+    txt.setPosition(5, 25);
+    txt.setColor("#245501");
+    add(txt);
+    
+}
+
+function chicken(){
+    subject = new WebImage("https://codehs.com/uploads/86688fa6085fbec0d70d64187e04e247");
+    subject.setSize(60, 60); 
+    subject.setPosition(getWidth()/2, getHeight()/2); 
+    add(subject); 
+}
+
+function hay(){
+    point = new WebImage("https://codehs.com/uploads/4245e4f93d37e6a994f900ae557e395f");
+    point.setSize(hay_width, hay_width); 
+    point.setPosition(Randomizer.nextInt(0, getWidth() - hay_width), Randomizer.nextInt(0, getHeight()-hay_width)); 
+    add(point); 
+}
+
+function checkCollisions(){
+    if (point.getX() >= getWidth() - hay_width || point.getX()<= 0){
+        hx = -hx;
+    }else if (point.getY() >= getHeight() - hay_width || point.getY() <= 0){
+        hy = -hy;
+    }
+    
+    if (subject.getX() >= getWidth() - subject.getWidth() || subject.getX() <= 0 || subject.getY() >= getHeight() - subject.getHeight() || subject.getY() <= 0){
+       stopTimer (move);
+       
+        let txt = new Text("Oh no you died...", "20pt Arial");
+        txt.setPosition(100, 300);
+        txt.setColor("green");
+        add(txt);
+
+    }
+    
+
+ if (point.getX() > subject.getX() && point.getX() < subject.getX() + subject.getWidth() && point.getY() > subject.getY() && point.getY() < subject.getX() + subject.getHeight()){
+         
+            point.setPosition(Randomizer.nextInt(0, getWidth() - point.getWidth()),Randomizer.nextInt(0, getHeight() - point.getHeight()));
+        count = count + 1;
+                
+        txt.setText("Score: " + count );
+    }
+
+}
+
+function direction(e){
+    if (e.key == "ArrowUp" || e.key == "w") {
+		dx = 0;
+		dy = -10;
+	}else if (e.key == "ArrowDown" || e.key == "s") {
+		dx = 0;
+		dy = 10;
+	}else if (e.key == "ArrowRight" || e.key == "d") {
+        dx = 10;
+        dy = 0;
+	}else if (e.key == "ArrowLeft" || e.key == "a") {
+		dx = -10;
+		dy = 0;
+	}
+}
+
+function background(){
+    let rect = new Rectangle(getWidth(), getHeight());
+    rect.setPosition(0, 0);
+    rect.setColor("#aad576");
+    add(rect);
+}
+
+    // Once you're in Javascript (script tags), comments use double // instead of the HTML-style of comment, <!-- -->
+    window.onload = function() {
+        // The reason we need this, is because we only want to call your code when then window is READY.
+        // If we try to call "main()" outside of `window.onload = function() {}`.... then it runs before the code has finished downloading
+        main();
+    }
+        
+        </script>
+    </body>
+</html>
